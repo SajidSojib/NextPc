@@ -42,7 +42,7 @@ export default function Register() {
       }
 
       // Redirect to protected page after successful login
-      router.push("/dashboard/add-product");
+      router.push("/products");
     } catch (err) {
       alert(err.message);
       setLoading(false);

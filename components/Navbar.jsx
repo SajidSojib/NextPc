@@ -39,6 +39,25 @@ export default function Navbar() {
           Home
         </Link>
       </li>
+      <li
+        data-aos="fade-down"
+        data-aos-duration="200"
+        data-aos-easing="ease-in-out"
+        data-aos-once="true"
+      >
+        <Link
+          href="/products"
+          aria-label="Products"
+          title="Products"
+          className={`${
+            pathname === "/products"
+              ? "flex items-center gap-1 btn btn-primary"
+              : "flex btn btn-ghost hover:border-primary hover:border-2 hover:bg-base-100 hover:text-primary items-center gap-1"
+          }`}
+        >
+          Products
+        </Link>
+      </li>
 
       {user && (
         <li
