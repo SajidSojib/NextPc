@@ -8,7 +8,9 @@ export default function Footer() {
     <footer className="footer bg-gray-800 py-10 px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 grid sm:grid-cols-3">
       {/* Brand Section */}
       <aside className="">
-        <span className="text-xl font-bold  text-primary">💻 CompuMart</span>
+        <span className="text-2xl font-bold  text-error">
+          💻 Next<span className="text-primary">PC</span>
+        </span>
         <p className="text-sm">
           Your trusted computer shop <br /> since 2025
         </p>

@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
-    const user=false
+    const user={email:"admin@gmail.com"}
     const loading = false
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const pathname = usePathname();
@@ -74,7 +74,6 @@ export default function Navbar() {
           <li>
             <button
               className="flex items-center gap-1 btn btn-primary"
-              onClick={handleLogOut}
             >
               Logout
             </button>
@@ -144,12 +143,14 @@ export default function Navbar() {
     </>
   );
   return (
-    <div className="bg-gray-800 text-error border-b-3 border-b-primary ">
+    <div className="bg-gray-800 text-white border-b-3 border-b-primary ">
       <div className="px-4 py-3 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
         <div className="relative flex items-center justify-between">
           <div data-aos="fade-right" className="text-2xl">
             <Link href="/" aria-label="Home" title="Home">
-              <h1 className="text-2xl font-bold">Next<span className="text-primary">PC</span></h1>
+              <h1 className="text-2xl font-bold">
+                💻 Next<span className="text-primary">PC</span>
+              </h1>
             </Link>
           </div>
           <ul className="items-center hidden space-x-3 lg:flex">
@@ -191,7 +192,7 @@ export default function Navbar() {
                 initial={{ opacity: 0 }}
                 className="absolute right-0 z-40 overflow-y-visible top-10"
               >
-                <div className="h-full p-3 space-y-2 w-60 bg-accent rounded-md">
+                <div className="h-full p-3 space-y-2 w-60 text-white bg-gray-600 rounded-md">
                   <div className="flex items-center p-2 space-x-4">
                     <div className="relative w-10 h-10 overflow-hidden bg-gray-200 rounded-full">
                       {user?.photoURL ? (
@@ -201,7 +202,7 @@ export default function Navbar() {
                           alt="Bordered avatar"
                         />
                       ) : (
-                        <Link to="/login">
+                        <Link href="/login">
                           <svg
                             className="absolute w-12 h-12  text-primary -left-1"
                             fill="currentColor"
@@ -219,11 +220,11 @@ export default function Navbar() {
                     </div>
 
                     <div>
-                      <h2 className="text-lg font-semibold">
+                      <h2 className="text-lg text-white font-semibold">
                         {user?.displayName}
                       </h2>
                       <span className="flex items-center space-x-1">
-                        <p className="text-xs hover:underline text-gray-500">
+                        <p className="text-xs hover:underline text-white/80 text-">
                           {user?.email}
                         </p>
                       </span>
@@ -234,7 +235,7 @@ export default function Navbar() {
                     <ul className="pt-4 pb-2 space-y-1 text-sm">
                       {user ? (
                         <div className="flex items-center justify-around">
-                          <li onClick={handleLogOut}>
+                          <li >
                             <button className="flex btn btn-primary w-full">
                               Log Out
                             </button>
