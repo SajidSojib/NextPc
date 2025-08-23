@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "daisyui": "^5.0.50",
     "hamburger-react": "^2.5.2",
     "mongodb": "^6.18.0",

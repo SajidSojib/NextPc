@@ -1,4 +1,5 @@
 import clientPromise from "@/lib/mongodb";
+import Image from "next/image";
 import Link from "next/link";
 
 export default async function Home() {
@@ -9,7 +10,7 @@ export default async function Home() {
     const db = client.db("compumart");
 
     // Fetch the first 6 products
-    products = await db.collection("products").find({}).limit(6).toArray();
+    products = await db.collection("products").find({}).limit(8).toArray();
 
     products = products.map((p) => ({
       ...p,
@@ -30,23 +31,29 @@ export default async function Home() {
       </div>
 
       {/* Product Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {products.map((product) => (
           <div
             key={product._id}
-            className="bg-base-100 shadow-md rounded-lg overflow-hidden flex flex-col"
+            className="border pb-6 rounded-lg shadow-md overflow-hidden bg-base-100"
           >
-            <img
-              src={product.photoUrl}
-              alt={product.name}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4 flex flex-col gap-2 flex-1">
-              <h2 className="text-lg font-semibold">{product.name}</h2>
-              <p className="text-primary font-bold">${product.price}</p>
+            <div className="relative w-full h-48">
+              <Image
+                src={product.photoUrl}
+                alt={product.name}
+                fill
+                className="object-cover rounded-lg"
+              />
+            </div>
+            <div className="p-4 flex flex-col justify-between h-40">
+              <div>
+                <h2 className="text-lg font-semibold">{product.name}</h2>
+                <p className="text-gray-400 line-clamp-2">{product.description}</p>
+                <p className="mt-1 text-primary font-bold">${product.price}</p>
+              </div>
               <Link
                 href={`/products/${product._id}`}
-                className="btn btn-outline btn-primary mt-auto"
+                className="btn btn-outline btn-primary mt-2"
               >
                 View Details
               </Link>

@@ -41,7 +41,7 @@ export default function Navbar() {
       </li>
       <li
         data-aos="fade-down"
-        data-aos-duration="200"
+        data-aos-duration="400"
         data-aos-easing="ease-in-out"
         data-aos-once="true"
       >
@@ -62,7 +62,7 @@ export default function Navbar() {
       {user && (
         <li
           data-aos="fade-down"
-          data-aos-duration="1000"
+          data-aos-duration="600"
           data-aos-easing="ease-in-out"
           data-aos-once="true"
         >
@@ -87,14 +87,14 @@ export default function Navbar() {
     <>
       {user ? (
         <>
-          <li>
+          {/* <li>
             <img
-              className="w-10 h-10 p-1 rounded-full ring-2 ring-primary dark:ring-primary"
+              className="w-10 h-10 p-1  rounded-full ring-2 ring-primary dark:ring-primary"
               src={user?.image || user?.photoURL}
               referrerPolicy="no-referrer"
               alt="User avatar"
             />
-          </li>
+          </li> */}
           <li>
             <button
               className="flex items-center gap-1 btn btn-primary"
@@ -139,7 +139,7 @@ export default function Navbar() {
           <ul className="items-center hidden space-x-3 lg:flex">
             {loading ? (
               <div className="flex mx-auto items-center justify-center text-center">
-                <div className="mx-auto text-center w-fit">Loading...</div>
+                <div className="mx-auto text-center w-fit"></div>
               </div>
             ) : (
               links
