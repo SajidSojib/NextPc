@@ -1,7 +1,10 @@
 import clientPromise from "@/lib/mongodb";
 import { ObjectId } from "mongodb";
 import Link from "next/link";
-
+export const metadataProductDetail = {
+  title: "NextPC | Product Details",
+  description: "View detailed information about the selected product",
+};
 export default async function ProductDetails({ params }) {
   const { id } = params;
 

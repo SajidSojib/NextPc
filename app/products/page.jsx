@@ -2,6 +2,12 @@ import Link from "next/link";
 import clientPromise from "@/lib/mongodb";
 import Image from "next/image";
 
+// app/products/page.jsx
+export const metadata = {
+  title: "NextPC | Products",
+  description: "Explore all products available at NextPC",
+};
+
 export default async function ProductsPage() {
   // Fetch products from MongoDB
   let products = [];
