@@ -2,10 +2,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
-export const metadataRegister = {
-  title: "NextPC | Register",
-  description: "Create an account to manage your products and orders",
-};
+
 export default function Register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
